@@ -1,3 +1,12 @@
+function Temp () {
+    while (true) {
+        makerbit.showStringOnLcd1602("Temp:", makerbit.position1602(LcdPosition1602.Pos1), 16)
+        basic.pause(1000)
+        makerbit.showStringOnLcd1602("" + (input.lightLevel()), makerbit.position1602(LcdPosition1602.Pos17), 16)
+        basic.pause(1000)
+        makerbit.clearLcd1602()
+    }
+}
 // # red = P1
 // # yellow = P2
 // # green = P8
@@ -77,13 +86,5 @@ function LED_ON () {
     pins.digitalWritePin(DigitalPin.P16, 1)
 }
 LCD()
-makerbit.showStringOnLcd1602("Temp:" + input.lightLevel(), makerbit.position1602(LcdPosition1602.Pos1), 16)
 basic.pause(1000)
-makerbit.clearLcd1602()
-basic.forever(function () {
-    makerbit.showStringOnLcd1602("Temp:" + input.lightLevel(), makerbit.position1602(LcdPosition1602.Pos1), 16)
-    LED_OFF()
-    basic.pause(1000)
-    LED_ON()
-    makerbit.clearLcd1602()
-})
+Temp()
