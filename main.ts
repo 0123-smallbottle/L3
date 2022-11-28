@@ -81,7 +81,7 @@ LED_OFF()
 basic.pause(1000)
 LED_ON()
 LCD()
-makerbit.showStringOnLcd1602("" + (input.lightLevel()), makerbit.position1602(LcdPosition1602.Pos1), 16)
+makerbit.showStringOnLcd1602("Temp:" + input.lightLevel(), makerbit.position1602(LcdPosition1602.Pos1), 16)
 basic.pause(1000)
 makerbit.clearLcd1602()
 basic.forever(function () {
